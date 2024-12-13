@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7605AAFE2D0BE03600F53BEA /* GeometryReaderInScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7605AAFD2D0BE03600F53BEA /* GeometryReaderInScrollView.swift */; };
 		7614A0D12BBBE55100EA4FE6 /* MySwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7614A0D02BBBE55100EA4FE6 /* MySwiftUIApp.swift */; };
 		7614A0D32BBBE55100EA4FE6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7614A0D22BBBE55100EA4FE6 /* ContentView.swift */; };
 		7614A0D52BBBE55400EA4FE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7614A0D42BBBE55400EA4FE6 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7605AAFD2D0BE03600F53BEA /* GeometryReaderInScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderInScrollView.swift; sourceTree = "<group>"; };
 		7614A0CD2BBBE55100EA4FE6 /* MySwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7614A0D02BBBE55100EA4FE6 /* MySwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySwiftUIApp.swift; sourceTree = "<group>"; };
 		7614A0D22BBBE55100EA4FE6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			children = (
 				7614A0D02BBBE55100EA4FE6 /* MySwiftUIApp.swift */,
 				7614A0D22BBBE55100EA4FE6 /* ContentView.swift */,
+				7605AAFD2D0BE03600F53BEA /* GeometryReaderInScrollView.swift */,
 				7614A0D42BBBE55400EA4FE6 /* Assets.xcassets */,
 				7614A0D62BBBE55400EA4FE6 /* MySwiftUI.entitlements */,
 				7614A0D72BBBE55400EA4FE6 /* Preview Content */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7605AAFE2D0BE03600F53BEA /* GeometryReaderInScrollView.swift in Sources */,
 				7614A0D32BBBE55100EA4FE6 /* ContentView.swift in Sources */,
 				7614A0D12BBBE55100EA4FE6 /* MySwiftUIApp.swift in Sources */,
 			);
