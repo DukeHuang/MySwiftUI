@@ -13,8 +13,10 @@ struct MySwiftUIApp: App {
         WindowGroup {
 //            MyView()
 //            TextAnimation()
-            ContentView1()
-//                .environmentObject(Model())
+//            ContentView1()
+
+            LineSplitTextView()
+            //                .environmentObject(Model())
         }
     }
 }

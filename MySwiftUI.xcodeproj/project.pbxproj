@@ -18,6 +18,15 @@
 		76E871D22D12C61300A72655 /* TypingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E871D12D12C61300A72655 /* TypingAnimation.swift */; };
 		76E871D42D12CE2B00A72655 /* ScrollAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E871D32D12CE2B00A72655 /* ScrollAnimation.swift */; };
 		76E871D62D12D3CC00A72655 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E871D52D12D3CC00A72655 /* BackgroundView.swift */; };
+		E005024F2D12ED79002A9B25 /* GeometryReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005024A2D12ED79002A9B25 /* GeometryReaderView.swift */; };
+		E00502502D12ED79002A9B25 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005024B2D12ED79002A9B25 /* GridView.swift */; };
+		E00502512D12ED79002A9B25 /* CardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00502482D12ED79002A9B25 /* CardContentView.swift */; };
+		E00502522D12ED79002A9B25 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00502472D12ED79002A9B25 /* Card.swift */; };
+		E00502532D12ED79002A9B25 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005024C2D12ED79002A9B25 /* Home.swift */; };
+		E00502542D12ED79002A9B25 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00502492D12ED79002A9B25 /* OverlayView.swift */; };
+		E00502562D12ED79002A9B25 /* TypingEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005024E2D12ED79002A9B25 /* TypingEffectView.swift */; };
+		E005025A2D12EE43002A9B25 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00502592D12EE43002A9B25 /* CardView.swift */; };
+		E005025C2D12F5CE002A9B25 /* TypingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005025B2D12F5CE002A9B25 /* TypingTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +43,15 @@
 		76E871D12D12C61300A72655 /* TypingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingAnimation.swift; sourceTree = "<group>"; };
 		76E871D32D12CE2B00A72655 /* ScrollAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollAnimation.swift; sourceTree = "<group>"; };
 		76E871D52D12D3CC00A72655 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		E00502472D12ED79002A9B25 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		E00502482D12ED79002A9B25 /* CardContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContentView.swift; sourceTree = "<group>"; };
+		E00502492D12ED79002A9B25 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		E005024A2D12ED79002A9B25 /* GeometryReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderView.swift; sourceTree = "<group>"; };
+		E005024B2D12ED79002A9B25 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		E005024C2D12ED79002A9B25 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		E005024E2D12ED79002A9B25 /* TypingEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingEffectView.swift; sourceTree = "<group>"; };
+		E00502592D12EE43002A9B25 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		E005025B2D12F5CE002A9B25 /* TypingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +85,15 @@
 			isa = PBXGroup;
 			children = (
 				7614A0D02BBBE55100EA4FE6 /* MySwiftUIApp.swift */,
+				E00502472D12ED79002A9B25 /* Card.swift */,
+				E00502482D12ED79002A9B25 /* CardContentView.swift */,
+				E00502492D12ED79002A9B25 /* OverlayView.swift */,
+				E005024A2D12ED79002A9B25 /* GeometryReaderView.swift */,
+				E005024B2D12ED79002A9B25 /* GridView.swift */,
+				E005024C2D12ED79002A9B25 /* Home.swift */,
+				E00502592D12EE43002A9B25 /* CardView.swift */,
+				E005024E2D12ED79002A9B25 /* TypingEffectView.swift */,
+				E005025B2D12F5CE002A9B25 /* TypingTextView.swift */,
 				7614A0D22BBBE55100EA4FE6 /* ContentView.swift */,
 				76E871CB2D12A6FE00A72655 /* ButtonAnimation.swift */,
 				76E871CD2D12AE5F00A72655 /* BuyButtonAnimation.swift */,
@@ -167,7 +194,16 @@
 				7614A0D32BBBE55100EA4FE6 /* ContentView.swift in Sources */,
 				7614A0D12BBBE55100EA4FE6 /* MySwiftUIApp.swift in Sources */,
 				76E871D22D12C61300A72655 /* TypingAnimation.swift in Sources */,
+				E005024F2D12ED79002A9B25 /* GeometryReaderView.swift in Sources */,
+				E00502502D12ED79002A9B25 /* GridView.swift in Sources */,
+				E00502512D12ED79002A9B25 /* CardContentView.swift in Sources */,
+				E005025A2D12EE43002A9B25 /* CardView.swift in Sources */,
+				E00502522D12ED79002A9B25 /* Card.swift in Sources */,
+				E00502532D12ED79002A9B25 /* Home.swift in Sources */,
+				E00502542D12ED79002A9B25 /* OverlayView.swift in Sources */,
+				E00502562D12ED79002A9B25 /* TypingEffectView.swift in Sources */,
 				76E871CE2D12AE5F00A72655 /* BuyButtonAnimation.swift in Sources */,
+				E005025C2D12F5CE002A9B25 /* TypingTextView.swift in Sources */,
 				76E871D42D12CE2B00A72655 /* ScrollAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -47,15 +47,14 @@ struct ContentView1: View {
         VStack {
             Spacer()
             PaperBackgroundView()
-                .frame(height: 400)
+//                .frame(height: 400)
             Spacer()
         }
     }
 }
 
-struct PaperBackgroundView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView1()
-    }
+
+#Preview {
+    ContentView1()
 }
 
