@@ -12,6 +12,12 @@
 		7614A0D32BBBE55100EA4FE6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7614A0D22BBBE55100EA4FE6 /* ContentView.swift */; };
 		7614A0D52BBBE55400EA4FE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7614A0D42BBBE55400EA4FE6 /* Assets.xcassets */; };
 		7614A0D92BBBE55400EA4FE6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7614A0D82BBBE55400EA4FE6 /* Preview Assets.xcassets */; };
+		76E871CC2D12A6FE00A72655 /* ButtonAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E871CB2D12A6FE00A72655 /* ButtonAnimation.swift */; };
+		76E871CE2D12AE5F00A72655 /* BuyButtonAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E871CD2D12AE5F00A72655 /* BuyButtonAnimation.swift */; };
+		76E871D02D12BB4200A72655 /* TextAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E871CF2D12BB4200A72655 /* TextAnimation.swift */; };
+		76E871D22D12C61300A72655 /* TypingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E871D12D12C61300A72655 /* TypingAnimation.swift */; };
+		76E871D42D12CE2B00A72655 /* ScrollAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E871D32D12CE2B00A72655 /* ScrollAnimation.swift */; };
+		76E871D62D12D3CC00A72655 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E871D52D12D3CC00A72655 /* BackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,12 @@
 		7614A0D42BBBE55400EA4FE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7614A0D62BBBE55400EA4FE6 /* MySwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MySwiftUI.entitlements; sourceTree = "<group>"; };
 		7614A0D82BBBE55400EA4FE6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		76E871CB2D12A6FE00A72655 /* ButtonAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAnimation.swift; sourceTree = "<group>"; };
+		76E871CD2D12AE5F00A72655 /* BuyButtonAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyButtonAnimation.swift; sourceTree = "<group>"; };
+		76E871CF2D12BB4200A72655 /* TextAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAnimation.swift; sourceTree = "<group>"; };
+		76E871D12D12C61300A72655 /* TypingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingAnimation.swift; sourceTree = "<group>"; };
+		76E871D32D12CE2B00A72655 /* ScrollAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollAnimation.swift; sourceTree = "<group>"; };
+		76E871D52D12D3CC00A72655 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +68,13 @@
 			children = (
 				7614A0D02BBBE55100EA4FE6 /* MySwiftUIApp.swift */,
 				7614A0D22BBBE55100EA4FE6 /* ContentView.swift */,
+				76E871CB2D12A6FE00A72655 /* ButtonAnimation.swift */,
+				76E871CD2D12AE5F00A72655 /* BuyButtonAnimation.swift */,
+				76E871CF2D12BB4200A72655 /* TextAnimation.swift */,
+				76E871D12D12C61300A72655 /* TypingAnimation.swift */,
 				7605AAFD2D0BE03600F53BEA /* GeometryReaderInScrollView.swift */,
+				76E871D32D12CE2B00A72655 /* ScrollAnimation.swift */,
+				76E871D52D12D3CC00A72655 /* BackgroundView.swift */,
 				7614A0D42BBBE55400EA4FE6 /* Assets.xcassets */,
 				7614A0D62BBBE55400EA4FE6 /* MySwiftUI.entitlements */,
 				7614A0D72BBBE55400EA4FE6 /* Preview Content */,
@@ -142,9 +160,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76E871D62D12D3CC00A72655 /* BackgroundView.swift in Sources */,
+				76E871CC2D12A6FE00A72655 /* ButtonAnimation.swift in Sources */,
+				76E871D02D12BB4200A72655 /* TextAnimation.swift in Sources */,
 				7605AAFE2D0BE03600F53BEA /* GeometryReaderInScrollView.swift in Sources */,
 				7614A0D32BBBE55100EA4FE6 /* ContentView.swift in Sources */,
 				7614A0D12BBBE55100EA4FE6 /* MySwiftUIApp.swift in Sources */,
+				76E871D22D12C61300A72655 /* TypingAnimation.swift in Sources */,
+				76E871CE2D12AE5F00A72655 /* BuyButtonAnimation.swift in Sources */,
+				76E871D42D12CE2B00A72655 /* ScrollAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
