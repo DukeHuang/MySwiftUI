@@ -14,14 +14,14 @@ struct BuyButtonAnimation: View {
     @State var currentIconIndex = 0
     @State var showCheckmark = false
 
-    @State var icons = ["gift.fill", "cart.fill", "bag.fill", "creditcard.fill","tag.fill","bag.fill"]
+    @State var icons = ["gift.fill", "cart.fill", "bag.fill", "creditcard.fill", "tag.fill", "bag.fill"]
     var body: some View {
         ZStack {
             Group {
                 Circle()
                     .frame(width: 55, height: 55)
                     .foregroundStyle(
-                        AngularGradient(colors: [.black,.yellow], center: .center, angle: .degrees(spin ? 360 : 0)
+                        AngularGradient(colors: [.black, .yellow], center: .center, angle: .degrees(spin ? 360 : 0)
                                        )
                     )
                     .mask {
@@ -62,7 +62,7 @@ struct BuyButtonAnimation: View {
             withAnimation(.linear(duration: 2).repeatForever(autoreverses: false)) {
                 spin.toggle()
             }
-            Timer.scheduledTimer(withTimeInterval: 0.8, repeats: true) { timer in
+            Timer.scheduledTimer(withTimeInterval: 0.8, repeats: true) { _ in
                 if start && !showCheckmark {
                     withAnimation {
                         currentIconIndex = (currentIconIndex + 1) % icons.count

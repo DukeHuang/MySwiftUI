@@ -11,7 +11,7 @@
 import SwiftUI
 class Model: ObservableObject {
     @Published var searchText: String = ""
-    @Published var tokens: [FruitToken] = [.apple,.banana,.pear]
+    @Published var tokens: [FruitToken] = [.apple, .banana, .pear]
 }
 
 class Product: Identifiable {
@@ -42,7 +42,7 @@ struct MyView: View {
     MyView()
 }
 
-//struct ContentView: View {
+// struct ContentView: View {
 //    @EnvironmentObject private var model: Model
 //    @State private var departmentId: Department.ID?
 //    @State private var productId: Product.ID?
@@ -79,7 +79,7 @@ struct MyView: View {
 //                .frame(width: 200,height: 50)
 //        }
 //    }
-//}
+// }
 
 struct DepartmentList: View {
     @Binding var departmentId: Department.ID?
@@ -105,7 +105,6 @@ struct ProductDetails: View {
     }
 }
 
-
 struct MyButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         ZStack {
@@ -113,7 +112,7 @@ struct MyButtonStyle: ButtonStyle {
 
             RoundedRectangle(cornerRadius: 6)
                 .foregroundStyle(.black)
-                .offset(y:offset)
+                .offset(y: offset)
             RoundedRectangle(cornerRadius: 6)
                 .foregroundStyle(.gray)
                 .offset(y: configuration.isPressed ? offset : 0)
@@ -128,17 +127,31 @@ struct MyButtonStyle: ButtonStyle {
     }
 }
 
-
-
 #Preview {
     Button(action: { print("Pressed") }) {
         Label("Press Me", systemImage: "star")
     }
     .buttonStyle(MyButtonStyle())
-    .frame(width: 200,height: 40)
+    .frame(width: 200, height: 40)
 }
 
+struct ContentView: View {
+    @State var key: String = ""
+    @FocusState var focused: Bool
+    var body: some View {
+        Text(key)
+            .focusable()
+            .focused($focused)
+            .onKeyPress { press in
+                key += press.characters
+                return .handled
+            }
+            .onAppear {
+                focused = true
+            }
+    }
+}
 
-//#Preview {
-//    ContentView()
-//}
+ #Preview {
+    ContentView()
+ }

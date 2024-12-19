@@ -10,13 +10,13 @@ import SwiftUI
 struct GridView: View {
     private let size: CGFloat = 50
     private let padding: CGFloat = 5
-    
+
     private var columns: [GridItem] {
         return [
             .init(.adaptive(minimum: size, maximum: size))
         ]
     }
-    
+
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: padding) {

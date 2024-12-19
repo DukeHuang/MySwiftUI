@@ -19,7 +19,7 @@ struct CardContentView: View {
     @State private var card: CCard = .init()
     var body: some View {
         CustomTextField(title: "Card Number", hint: "", value: $card.number) {
-            
+
         }
     }
 }
@@ -29,15 +29,15 @@ struct CustomTextField: View {
     var title: String
     var hint: String
     @Binding var value: String
-    var onChange: () -> ()
+    var onChange: () -> Void
     @FocusState private var isActive: Bool
-    
+
     var body: some View {
-        VStack(alignment: .leading,spacing: 10) {
+        VStack(alignment: .leading, spacing: 10) {
             Text(title)
                 .font(.caption2)
                 .foregroundStyle(.gray)
-            
+
             TextField(hint, text: $value)
                 .padding(.horizontal, 15)
                 .padding(.vertical, 12)

@@ -17,7 +17,7 @@ struct TypingAnimation: View {
             Text(displayedText)
                 .font(.largeTitle.bold())
             Rectangle()
-                .frame(width: 5,height: 40)
+                .frame(width: 5, height: 40)
                 .opacity(showLine ? 1 : 0)
         }
         .foregroundStyle(.green)

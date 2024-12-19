@@ -15,7 +15,7 @@ struct OverlayView: View {
                 .overlay(alignment: .topTrailing) { Star(color: .yellow) }
                 .overlay(alignment: .bottomLeading) { Star(color: .green) }
                 .overlay(alignment: .bottomTrailing) { Star(color: .blue) }
-        
+
              Color.blue
                  .frame(width: 200, height: 200)
                  .overlay {
@@ -23,7 +23,7 @@ struct OverlayView: View {
                          .frame(width: 100, height: 100)
                      Star()
                  }
-        
+
              Color.blue
                  .frame(width: 200, height: 200)
                  .overlay(alignment: .bottom) {
@@ -31,7 +31,7 @@ struct OverlayView: View {
                          .frame(width: 100, height: 100)
                      Star()
                  }
-        
+
         Color.blue
               .frame(width: 200, height: 200)
               .overlay(alignment: .bottom) {
@@ -49,7 +49,7 @@ struct Star: View {
     var body: some View {
         Image(systemName: "star.fill")
             .foregroundStyle(color)
-            
+
     }
 }
 

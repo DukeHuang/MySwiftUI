@@ -24,15 +24,12 @@ struct GeometryReaderView: View {
                     Text("\(proxy.frame(in: .local).minX)")
                     Text("\(proxy.frame(in: .local).minY)")
                 }
-                
-                
+
                 Text("Where am I ")
-                    
-                    .position(x:proxy.frame(in: .local).minX,
-                              y:proxy.frame(in: .local).midY)
-                    
-                    
-                
+
+                    .position(x: proxy.frame(in: .local).minX,
+                              y: proxy.frame(in: .local).midY)
+
             }
         }
     }

@@ -22,29 +22,29 @@ struct Home: View {
                     .frame(maxWidth: .infinity)
                     .overlay(alignment: .trailing) {
                         Button {
-                            
+
                         } label: {
                             Image(.pic)
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 35, height: 35)
                                 .clipShape(.circle)
-                            
+
                         }
                     }
                     /// Let's make it fade away when detail view is expanding
                     .blur(radius: showDetailView ? 5 : 0)
                     .opacity(showDetailView ? 0 : 1)
-                
+
                 let mainOffset = CGFloat(cards.firstIndex(where: { $0.id == selectedCard?.id }) ?? 0) * -size.width
-                
+
                 /// Cards View
                 LazyVStack(spacing: 10) {
                     ForEach(cards) { card in
                         /// Let 's covert this scrollview to horizontal without changing any of it's properties and by just using the offset modifier
                         let cardOffset = CGFloat(cards.firstIndex(where: { $0.id == card.id}) ?? 0) * size.width
-                        
-                        CardView(card)
+
+                        cardView(card)
                         /// Making it to occupy the full screen width
                             .frame(width: showDetailView ? size.width : nil)
                         /// Now, let's move all the cards to the top using visualEffect modifier
@@ -72,10 +72,10 @@ struct Home: View {
             }
         }
     }
-    
-    ///Card View
+
+    /// Card View
     @ViewBuilder
-    func CardView(_ card: Card) -> some View {
+    func cardView(_ card: Card) -> some View {
         /// Adapting Card View when it's getting expanded
         ZStack {
             Rectangle()
@@ -83,9 +83,9 @@ struct Home: View {
             /// Card Details View
             VStack(alignment: .leading) {
                 if !showDetailView {
-                    VisaImageView(card.visaGeometryID, height: 20)
+                    visaImageView(card.visaGeometryID, height: 20)
                 }
-                VStack(alignment: .leading,spacing: 4) {
+                VStack(alignment: .leading, spacing: 4) {
                     Text(card.number)
                         .font(.caption)
                         .foregroundStyle(.white.secondary)
@@ -99,9 +99,9 @@ struct Home: View {
                     ZStack {
                         /// Moving the Visa View here with the help of MatchedGeometry Effect
                         if showDetailView {
-                            VisaImageView(card.visaGeometryID, height: 10)
+                            visaImageView(card.visaGeometryID, height: 10)
                                 .frame(maxWidth: .infinity, alignment: .leading)
-                            ///Let 's move to close to the date
+                            /// Let 's move to close to the date
                                 .offset(y: 40)
                         }
                         /// Let's create a close button and which will be only visible to the selected card
@@ -119,19 +119,19 @@ struct Home: View {
                                     .contentShape(.rect)
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .transition(.asymmetric(insertion: .opacity, removal: .identity))
-                                
+
                             }
                         }
                     }
                 }
                 .padding(.top, showDetailView ? safeArea.top - 10 : 0)
-                
+
                 HStack {
                     Text("Expires: \(card.expires)")
                         .font(.caption)
-                    
+
                     Spacer()
-                    
+
                     Text("iJUSTINE")
                         .font(.callout)
                 }
@@ -152,15 +152,15 @@ struct Home: View {
             }
         }
     }
-    
+
     @ViewBuilder
-    func VisaImageView(_ id: String, height: CGFloat) -> some View {
+    func visaImageView(_ id: String, height: CGFloat) -> some View {
         Image(.visa)
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(height: height)
     }
-    
+
     /// I need the card to be occupied to the safeArea top when it's expanded, thus let's modify the expanded height with the inclusion of the safe area value
     var expandedCardHeight: CGFloat {
         safeArea.top + 130

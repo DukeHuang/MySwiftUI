@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TextAnimation: View {
-    var items = ["Buttons","Text","Images","Cards", "Forms"]
+    var items = ["Buttons", "Text", "Images", "Cards", "Forms"]
     var colors: [Color] = [.blue, .indigo, .red, .cyan, .yellow]
     @State var currentIndex = 0
 
@@ -22,7 +22,7 @@ struct TextAnimation: View {
         HStack(spacing: 4) {
             Text("Loading")
             ZStack {
-                ForEach(0..<items.count,id:\.self) { index in
+                ForEach(0..<items.count, id: \.self) { index in
                     if index == currentIndex {
                         Text(items[index])
                             .bold()
@@ -33,7 +33,7 @@ struct TextAnimation: View {
                     }
                 }
             }
-            .frame(width: 70,height: 30, alignment: .leading)
+            .frame(width: 70, height: 30, alignment: .leading)
             .clipped()
         }
         .onAppear {

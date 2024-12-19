@@ -24,15 +24,15 @@ struct PaperBackgroundView: View {
 // 噪点纹理实现
 struct NoiseTexture: View {
     var body: some View {
-        GeometryReader { geometry in
+        GeometryReader { _ in
             Canvas { context, size in
                 for _ in 0..<1500 {
-                    let x = CGFloat.random(in: 0...size.width)
-                    let y = CGFloat.random(in: 0...size.height)
+                    let xxx = CGFloat.random(in: 0...size.width)
+                    let yyy = CGFloat.random(in: 0...size.height)
                     let opacity = Double.random(in: 0.01...0.05)
                     let diameter: CGFloat = CGFloat.random(in: 0.5...1.5)
                     context.fill(
-                        Path(ellipseIn: CGRect(x: x, y: y, width: diameter, height: diameter)),
+                        Path(ellipseIn: CGRect(x: xxx, y: yyy, width: diameter, height: diameter)),
                         with: .color(Color.black.opacity(opacity))
                     )
                 }
@@ -53,8 +53,6 @@ struct ContentView1: View {
     }
 }
 
-
 #Preview {
     ContentView1()
 }
-

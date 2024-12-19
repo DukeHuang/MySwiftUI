@@ -15,7 +15,8 @@ struct MySwiftUIApp: App {
 //            TextAnimation()
 //            ContentView1()
 
-            LineSplitTextView()
+//            LineSplitTextView()
+            ContentView()
             //                .environmentObject(Model())
         }
     }
