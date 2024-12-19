@@ -95,24 +95,30 @@ struct LineSplitTextView: View {
 //                        }
                         .onKeyPress(.init("\u{7F}"), phases: .down, action: { _ in
                             print("delete key pressed!")
+
+                            if currentIndex > 0 && inputText.count == 0 {
+                                withAnimation(.easeInOut) {
+                                    currentIndex -= 1
+                                }
+                            }
                             return .ignored
                         })
-                        .onKeyPress(.deleteForward, phases: .down, action: { _ in
-                            print("clear key pressed!")
-                            return .ignored
-                        })
-                        .onKeyPress(action: { keyPress in
-                            print("""
-                                    keyPress ====>
-                                    Key: \(keyPress.key)
-                                    Modifiers: \(keyPress.modifiers)
-                                    Phase: \(keyPress.phase)
-                                    Debug description: \(keyPress.debugDescription)
-                                    =======
-                                   """
-                            )
-                            return .ignored
-                        })
+//                        .onKeyPress(.deleteForward, phases: .down, action: { _ in
+//                            print("clear key pressed!")
+//                            return .ignored
+//                        })
+//                        .onKeyPress(action: { keyPress in
+//                            print("""
+//                                    keyPress ====>
+//                                    Key: \(keyPress.key)
+//                                    Modifiers: \(keyPress.modifiers)
+//                                    Phase: \(keyPress.phase)
+//                                    Debug description: \(keyPress.debugDescription)
+//                                    =======
+//                                   """
+//                            )
+//                            return .ignored
+//                        })
                         .padding(padding)
                         .onChange(of: inputText) { oldValue, newValue in
                             print("oldValue = \(oldValue), newValue = \(newValue)")
