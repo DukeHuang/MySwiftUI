@@ -12,38 +12,14 @@ struct LineSplitTextView: View {
         case input
     }
     @FocusState private var focusedEditor: Editor?
-
-    let text = """
-                        Mr Willy Wonka can make marshmallows that taste of violets, 
-                        and rich caramels that change color every ten seconds as 
-                        you suck them Mr Willy Wonka can make marshmallows that 
-                        taste of violets, and rich caramels that change color 
-                        every ten seconds as you suck them Mr Willy Wonka can 
-                        make marshmallows that taste of violets, and rich 
-                        caramels that change color every ten seconds as 
-                        you suck them Mr Willy Wonka can make marshmallows
-                        that taste of violets, and rich caramels that change
-                        color every ten seconds as you suck them Mr Willy 
-                        Wonka can make marshmallows that taste of violets,
-                        and rich caramels that change color every ten 
-                        seconds as you suck them Mr Willy Wonka can 
-                        make marshmallows that taste of violets, and
-                        rich caramels that change color every ten 
-                        seconds as you suck them Mr Willy Wonka can
-                        make marshmallows that taste of violets, and 
-                        rich caramels that change color every ten 
-                        seconds as you suck them Mr Willy Wonka 
-                        can make marshmallows that taste of 
-                        violets, and rich caramels that 
-                        change color every ten seconds
-                        as you suck them 保存每行文本保存每
-                        行文本保存每行文本保存每行文本保存每行
-                        文本保存每行文本保存每行文本.
-                        """
+    // swiftlint:disable Line line_length
+    let text = " However mean your life is, meet it and live it; do not shun it and call it hardnames. It is not so bad as you suppose. It looks poorest when you are richest. The faultfinder will find faults in paradise. Love your life, poor as it is. You may perhaps have some pleasant, thrilling, glorious hours, even in a poorhouse. The setting sun is reflected from the windows of the almshouse as brightly as from the rich man\'s abode; the snow melts before its door as early in the spring. I do not see but a quiet mind may live as contentedly there, and have as cheering thoughts, as in a palace. The town\'s poor seem to me often to live the most independent lives of any. May be they are simply great enough to receive without misgiving. Most think that they are above being supported by the town; but it often happens that they are not above supporting themselves by dishonest means. which should be more disreputable. Cultivate poverty like a garden herb, like sage. Do not trouble yourself much to get new things, whether clothes or friends, turn the old, return to them. Things do not change, we change. Sell your clothes and keep your thoughts."
     @State private var lines: [AttributedString] = [] // 保存每行文本
     @State private var padding: CGFloat = 30
     @State private var currentIndex: Int = 0
     @State private var inputText = ""
+
+    @State private var allInputText = ""
 
     private var monoSpacedFont: Font {
         .system(size: 16, design: .monospaced)
@@ -66,6 +42,7 @@ struct LineSplitTextView: View {
                         width: proxy.frame(in: .local).size.width - padding * 2
                     ) { splitLines in
                         DispatchQueue.main.async {
+                            print("onSplit")
                             self.lines = splitLines
                             if currentIndex > 0 { lines[currentIndex - 1].foregroundColor = .black }
                             let origin = String(lines[currentIndex].characters)
@@ -74,25 +51,21 @@ struct LineSplitTextView: View {
                     }
                         .hidden()
                 )
-                .padding(.top, 100)
-                .padding(.horizontal, padding)
                 .overlay(alignment: .topLeading) {
                     TextField("", text: $inputText)
                         .font(monoSpacedFont)
+#if os(macOS)
                         .opacity(0)
+                    #else
+//                        .hidden()
+//                        .foregroundStyle(.clear)
+                        .opacity(0)
+                    #endif
                         .focusable()
                         .focused($focusedEditor, equals: .input)
                         .onAppear {
                             focusedEditor = .input
                         }
-//                        .onKeyPress(.delete) {
-//                            print("delete key pressed!")
-//                            return .handled
-//                        }
-//                        .onKeyPress(.clear) {
-//                            print("clear key pressed!")
-//                            return .handled
-//                        }
                         .onKeyPress(.init("\u{7F}"), phases: .down, action: { _ in
                             print("delete key pressed!")
 
@@ -103,35 +76,27 @@ struct LineSplitTextView: View {
                             }
                             return .ignored
                         })
-//                        .onKeyPress(.deleteForward, phases: .down, action: { _ in
-//                            print("clear key pressed!")
-//                            return .ignored
-//                        })
-//                        .onKeyPress(action: { keyPress in
-//                            print("""
-//                                    keyPress ====>
-//                                    Key: \(keyPress.key)
-//                                    Modifiers: \(keyPress.modifiers)
-//                                    Phase: \(keyPress.phase)
-//                                    Debug description: \(keyPress.debugDescription)
-//                                    =======
-//                                   """
-//                            )
-//                            return .ignored
-//                        })
-                        .padding(padding)
-                        .onChange(of: inputText) { oldValue, newValue in
-                            print("oldValue = \(oldValue), newValue = \(newValue)")
+                        .onChange(of: inputText) { _, newValue in
+//                            print("oldValue = \(oldValue), newValue = \(newValue)")
                             if newValue.count >= String(lines[currentIndex].characters).count {
                                 withAnimation(.easeInOut) {
+                                    print("换行")
                                     currentIndex += 1
+                                    allInputText += inputText
                                     inputText = ""
+
                                 }
                             }
                         }
 
                     }
                 }
+            #if os(macOS)
+            .padding(.top, proxy.frame(in: .local).size.height / 2)
+            #else
+            .padding(.top, proxy.frame(in: .local).size.height / 4)
+            #endif
+            .padding(.horizontal, padding)
         }
 
     }

@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 class ActorExample {
     actor Counter {
          var value = 0
@@ -41,7 +39,7 @@ class ActorExample {
     actor DataManager {
         private var data: [String] = []
 
-        //与异步函数无缝集成
+        // 与异步函数无缝集成
         func addItem(_ item: String) async {
             data.append(item)
         }
@@ -57,4 +55,3 @@ class ActorExample {
     /// 与Swift的异步/并发模型紧密结合的场景
 
 }
-
